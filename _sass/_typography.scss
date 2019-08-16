@@ -1,0 +1,85 @@
+/* Typography */
+
+h1, h2, h3, h4, h5, p, a {
+
+  &.white {
+    color: #fff;
+  }
+
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  line-height: 1.2;
+  @include bp(mama-bear) {
+    font-size: 2rem;
+  }
+}
+
+h3 {
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 1.4;
+}
+
+h4 {
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 1.5;
+  @include bp(baby-bear) {
+    font-size: 14px;
+    line-height: 1.57142857;
+  }
+}
+
+p {
+  font-size: 20px;
+  line-height: 1.7;
+  @include bp(mama-bear) {
+    font-size: 18px;
+    line-height: 1.66666667;
+  }
+
+  &.small {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  a {
+    font-size: 20px;
+  }
+
+}
+
+a {
+  color: $color12;
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+a:hover, a:hover:before, a:hover:after, a:active, a:active:before, a:active:after, a:focus, a:focus:before, a:focus:after {
+  opacity: 0.50;
+}
+
+a, a:before, a:after, a:focus {
+  transition: opacity 200ms ease;
+}
+
+ul.list, ol.list, .legal ul, .legal ol {
+  font-size: 16px;
+  line-height: 1.5;
+  list-style: disc inside none;
+
+  li {
+    margin-bottom: 1.25rem;
+    margin-left: 1px;
+  }
+
+  ul, ol {
+    list-style: circle inside none;
+    margin: 1.25rem 0 0 1.25rem;
+  }
+
+}
