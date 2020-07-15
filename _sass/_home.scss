@@ -262,13 +262,16 @@
 
     &.official {
       margin: 3em;
+      @include bp(baby-bear) {
+        margin: 2em;
+      }
       grid-template-columns: 1fr;
       .header {
         display: grid;
         grid-template-columns: 3fr 1fr 3fr;
 
         @include bp(baby-bear) {
-          grid-template-columns: 2fr 1fr 2fr;
+          grid-template-columns: 1fr 1fr 1fr;
         }
         h3 {
           align-self: center;
@@ -304,6 +307,9 @@
         grid-template-columns: 1fr 1fr 1fr;
         padding-left: 20px;
         padding-right: 20px;
+        @include bp(baby-bear) {
+          padding: 0px;
+        }
         img {
           padding: 0px 20px 0px 20px;
           margin: 10px;
@@ -311,6 +317,14 @@
           opacity: 50%;
           align-self: center;
 
+          @include bp(baby-bear) {
+            padding: 0px;
+            margin: 10px;
+            margin-bottom: 0px;
+            width: 80%;
+            opacity: 50%;
+            align-self: center;
+          }
         }
       }
     }
