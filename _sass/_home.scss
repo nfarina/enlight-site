@@ -7,13 +7,15 @@
     justify-items: center;
     width: 100%;
     @include bp(mama-bear) {
-      grid-template-columns: 6fr 4fr;
-      grid-column-gap: 2rem;
-    }
+      grid-template-columns: 6fr 5fr;
+        }
     @include bp(baby-bear) {
       grid-template-columns: 1fr;
     }
 
+    .col {
+      z-index: 1;
+    }
     .use_your_words {
       margin: 6.25rem auto;
       padding: 0 3.75rem;
@@ -21,6 +23,45 @@
         margin: 3.125rem auto;
         padding: 0;
       }
+    }
+
+    .video {
+      align-self: end;
+      padding: 0;
+      height: 36.25rem;
+      overflow: hidden;
+      margin-left: -100px;
+      margin-top: 40px;
+      
+        grid-column-start: 2;
+        grid-column-end: 2;
+        grid-row-start: 1;
+        grid-row-end: 1;
+      
+      @include bp(baby-bear) {
+        grid-column-start: 1;
+        grid-column-end: 1;
+        grid-row-start: 2;
+        grid-row-end: 2;
+      }
+    }
+
+    .disclaimer {
+        grid-column-start: 2;
+        grid-column-end: 2;
+        grid-row-start: 1;
+        grid-row-end: 1;
+        z-index: 2;
+        align-self: flex-end;
+
+      @include bp(baby-bear) {
+        grid-column-start: 1;
+        grid-column-end: 1;
+        grid-row-start: 2;
+        grid-row-end: 2;
+        z-index: 2;
+        align-self: flex-end;
+      }  
     }
 
     .illus_hero {
@@ -58,9 +99,7 @@
 
     .form_wrapper {
       display: block;
-      @include bp(baby-bear) {
-        display: none;
-      }
+
 
       p {
         display: block;
@@ -78,12 +117,11 @@
     }
 
     .stores {
-      display: none;
       margin-bottom: 1.25rem;
       @include bp(baby-bear) {
-        display: block;
+        width: 100%;
+        text-align: center;
       }
-
       a {
         display: inline-block;
 
@@ -221,6 +259,71 @@
     @include bp(baby-bear) {
       grid-template-columns: 1fr;
     }
+
+    &.official {
+      margin: 3em;
+      grid-template-columns: 1fr;
+      .header {
+        display: grid;
+        grid-template-columns: 3fr 1fr 3fr;
+
+        @include bp(baby-bear) {
+          grid-template-columns: 2fr 1fr 2fr;
+        }
+        h3 {
+          align-self: center;
+        }
+        hr {
+          display: block;
+          height: 1px;
+          border: 0;
+          border-top: 1px solid #ccc;
+          margin: 1em;
+          padding: 0;
+        }
+      }
+      .footer {
+        display: grid;
+        grid-template-columns: 3fr;
+
+        @include bp(baby-bear) {
+          grid-template-columns: 2fr;
+        }
+        hr {
+          display: block;
+          height: 1px;
+          border: 0;
+          border-top: 1px solid #ccc;
+          margin: 1em;
+          padding: 0;
+        }
+      }
+      .logos {
+        display: grid;
+        width: 100%;
+        grid-template-columns: 1fr 1fr 1fr;
+        padding-left: 20px;
+        padding-right: 20px;
+        img {
+          padding: 0px 20px 0px 20px;
+          margin: 10px;
+          width: 80%;
+          opacity: 50%;
+          align-self: center;
+
+        }
+      }
+    }
+
+    &.quotes {
+      grid-template-columns: 1fr;
+      background: rgba(248,248,248,0.82);
+      padding: 8.5rem 8.75rem 8.5rem;
+      .quoteText {
+
+      }
+    }
+    
 
     &.feed {
       background: $color4;

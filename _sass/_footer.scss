@@ -44,9 +44,6 @@
     grid-gap: 0.625rem;
     grid-template-columns: 1fr 1fr;
     margin: 0 auto;
-    @include bp(baby-bear) {
-      grid-template-columns: 1fr;
-    }
 
     a:first-child {
       justify-self: end;
