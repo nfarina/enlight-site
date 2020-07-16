@@ -55,6 +55,7 @@
         align-self: flex-end;
         text-shadow: black 2px 2px 4px;
         color: white;
+        opacity: 0;
 
       @include bp(baby-bear) {
         grid-column-start: 1;
@@ -336,7 +337,6 @@
       background: rgba(248,248,248,0.82);
       padding: 8.5rem 8.75rem 8.5rem;
       .quoteText {
-
       }
     }
     
