@@ -291,7 +291,7 @@
       .footer {
         display: grid;
         grid-template-columns: 3fr;
-
+        width: 40%;
         @include bp(baby-bear) {
           grid-template-columns: 2fr;
         }
@@ -333,10 +333,37 @@
     }
 
     &.quotes {
-      grid-template-columns: 1fr;
+      grid-template-columns: 1fr 8fr 1fr;
+
       background: rgba(248,248,248,0.82);
-      padding: 8.5rem 8.75rem 8.5rem;
+      padding: 8rem 8.75rem 7.8rem;
       .quoteText {
+        font-size: 25px;
+        font-style: italic;
+        @include bp(baby-bear) {
+          font-size: 16px;
+        }
+      }
+      .quotesymbolstart {
+        font-size: 150px;
+        opacity: 10%;
+        align-self: baseline;
+      }
+      .quotesymbolend {
+        font-size: 150px;
+        opacity: 10%;
+        align-self: end;
+      }
+      .quoteAttributer {
+        grid-column: 2;
+        width: 100%;
+        text-align: right;
+        margin-top: 20px;
+        margin-right: 20px;
+        font-size: 20px;
+        @include bp(baby-bear) {
+          font-size: 15px;
+        }
       }
     }
     
