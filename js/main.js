@@ -30,8 +30,11 @@
 
 var timer;
 var current;
+var stopped = false;
+
 
 function animateValue(id, start, end, duration) {
+  clearInterval(timer);
   var range = end - start;
   current = start;
   var increment = end > start? 1 : -1;
@@ -49,9 +52,22 @@ function animateValue(id, start, end, duration) {
 
 function stop(element) {
   clearInterval(timer);
+  stopped = true;
+}
+
+
+
+function toggle(element) {
+  if (stopped) {
+    resume(element);
+  }
+  else {
+    stop(element);
+    }
 }
 
 function resume(element) {
+  stopped = false;
   millisecondsSinceStart = (now - start) + ((start.getTimezoneOffset() - now.getTimezoneOffset()) * 60 * 1000);  
   timeTillEnd = fullYear - millisecondsSinceStart;
   animateValue("fraudCounter", current, 27000000000, timeTillEnd);
